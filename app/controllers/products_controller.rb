@@ -39,11 +39,12 @@ class ProductsController < ApplicationController
   end
 
   private
-    def set_product
-      @product = Product.find(params[:id])
-    end
 
-    def product_params
-      params.expect(product: [ :name ])
-    end
+  def set_product
+    @product = Product.find(params[:id])
+  end
+
+  def product_params
+    params.expect(product: [ :name, :description ])
+  end
 end
